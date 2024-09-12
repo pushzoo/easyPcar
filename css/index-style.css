@@ -1,0 +1,708 @@
+@charset "utf-8";
+
+/* font */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@font-face {
+    font-family: 'NEXEN TIRE';
+    src: url('../font/NEXEN_TIRE_Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* color */
+:root {
+    --companyColor : #3C77CF;
+}
+
+/* reset */
+* {margin: 0;padding: 0;}
+
+a {text-decoration: none;}
+li {list-style: none;}
+p, span, a, h1, h2, h3, h4, h5, h6, td, th, li {color:#000; font-family: 'pretendard';}
+
+
+#wrap header {
+    width: 100%;
+    position: fixed;
+    top: 0;left: 0;
+    z-index: 999999;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(60, 119, 207, 0.1);
+}
+
+/* ====================
+    header
+====================*/
+
+.headerInner {
+    width: 1920px;
+    height: 96px;
+    display: flex;
+    margin: 0 auto; /*0910 추가함*/
+}
+
+.headerIcon_container {
+    width: 1342px; height: 96px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 25px;
+    box-sizing: border-box;
+}
+
+.left_icon button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.left_icon p {
+    float: right;
+    font-size: 25px;
+    line-height: 40px;
+    margin-left: 20px;
+    font-weight: normal;
+    color: var(--companyColor);
+}
+
+/* side-side-bar */
+.side-bar {
+    width: 358px;
+    height: 1080px;
+    z-index: 99999999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-358px);
+}
+
+.side-bar.active {
+    transform: translateX(0); /*사이드바가 화면에 나타남*/
+}
+
+.side-bar-header {
+    height: 100px;
+}
+
+#side-closeToggle{
+    width: 40px; height: 40px;
+    position: absolute;
+    top: 15px;
+    right: 28px;
+    padding-top: 5px;
+}
+
+.mainMenu {
+    margin: 0 0 0 46px;
+}
+.mainMenu li>a {
+    width: 268px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0px;
+}
+.mainMenu li>a .title{
+    font-size: 28px;
+    letter-spacing: -2px;
+    display: flex;
+    gap: 10px;
+}
+
+.subMenu {
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+/* 서브메뉴가 열릴 때 */
+.accordion-item.active .subMenu {
+    display: block;
+}
+
+.subMenu li>a {
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    background-color: rgba(60, 119, 207, 0.2);
+    padding: 18px 0 18px 50px;
+    width: 268px;
+    box-sizing: border-box;
+}
+
+.subMenu li a:hover {
+    background-color: #2c6dcd;
+    color: #fff;
+}
+
+.subside-bar li>a img {
+    width: 24px;
+}
+
+.headerIcon_container .logo {
+    position: absolute;
+    top: 50%;
+    padding-top: 5px;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 요소 크기의 절반만큼 이동 */
+}
+
+.logo img {
+    height: 70px;
+}
+
+.right_icon {
+    display: flex;
+}
+
+.headerInfo {
+    display: flex;
+    gap: 15px;
+}
+
+.mypage {
+    display: flex;
+    gap: 8px;
+}
+
+.mypage img {
+    width: 41px;
+    height: 41px;
+    padding-top: 5px;
+}
+
+.money {
+    font-size: 24px;
+    line-height: 41px;
+    color: var(--companyColor);
+    display: flex;
+    gap: 5px;
+    padding-top: 5px;
+}
+
+.money span {
+    color: var(--companyColor);
+}
+
+.bell {
+    color: #223E94;
+    padding-top: 8px;
+    position: relative;
+}
+.bell .noticePopup {
+    display: none;
+}
+.bell:hover .noticePopup,
+.bell:focus .noticePopup {
+    position: absolute;
+    top: 42px;right: -44px;
+    display: block;
+}
+
+.log {
+    display: flex;
+    background-color: var(--companyColor);
+    border-radius: 10px;
+    width: 92px;
+    height: 36px;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 11px;
+}
+
+.log a {
+    color: #fff;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
+
+/* ====================
+    main
+====================*/
+#wrap main {
+    position: relative;
+    width: 1920px;
+    height: 1369px;
+    margin: 0 auto;
+    top: 96px;
+}
+#wrap main .banner {
+    width: 1920px;
+    height: 288px;
+}
+#wrap main .search {
+    position: relative;
+    width: 1341px;
+    height: 230px;
+    background: #fff;
+    border-radius: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+    margin: 0 auto;
+    top: -203px;
+}
+
+#wrap main .search .search_local,
+#wrap main .search .search_date,
+#wrap main .search .search_keyword,
+#wrap main .search .search_kind {
+    position: absolute;
+    width: 170px;
+    height: 48px;
+    border-bottom: 3px solid #585858;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 15px;
+    cursor: pointer;
+}
+
+.search_keyword input {
+    width: 600px;
+    border: none;
+    font-size: 20px;
+    outline: none;
+}
+
+#wrap main .search p {
+    position: relative;
+    width: 100%;
+    font-size: 20px;
+}
+#wrap main .search span {
+    position: absolute;
+    right: 10px;
+    font-size: 18px;
+    color: var(--companyColor);
+}
+#wrap main .search .search_local {
+    margin: 29px 0 0 61px;
+}
+#wrap main .search .search_date {
+    margin: 29px 0 0 287px;
+}
+#wrap main .search .search_keyword {
+    width: 640px;
+    margin: 29px 0 0 506px;
+}
+#wrap main .search .search_kind {
+    margin: 91px 0 0 61px;
+}
+#wrap main .search .search_option {
+    position: absolute;
+    margin: 101px 0 0 282px;
+    display: flex;
+    gap: 80px;
+}
+#wrap main .search .search_option div {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+#wrap main .search .search_option div p {
+    display: inline;
+    padding-left: 10px;
+}
+#wrap main .search .search_button {
+    position: absolute;
+    width: 122px;
+    height: 122px;
+    border-radius: 50%;
+    right: 47px;
+    top: 29px;
+}
+#wrap main .search .search_button a {
+    width: 122px;
+    height: 122px;
+    position: absolute;
+    border-radius: 50%;
+}
+#wrap main .search .search_button img {
+    top: 0;
+    left: 0;
+    width: 122px;
+    height: 122px;
+}
+#wrap main .quick {
+    position: absolute;
+    width: 1920px;
+    top: 251px;
+    text-align: center;
+}
+#wrap main .quick a {
+    margin: 0 24px 0 24px;
+}
+#wrap main .parking_state {
+    position: relative;
+    top: -120px;
+    width: 1341px;
+    height: 575px;
+    margin: 0 auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
+#wrap main .parking_state .parking_date {
+    width: 1341px;
+    height: 96px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background: var(--companyColor);
+    line-height: 96px;
+}
+#wrap main .parking_state .parking_date p {
+    font-size: 30px;
+    color: #fff;
+    padding-left: 85px;
+}
+#wrap main .parking_state .parking_info {
+    position: relative;
+    width: 1341px;
+    height: 227px;
+    border-bottom: 2px dashed #ddd;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+#wrap main .parking_state .parking_info p:nth-of-type(1) {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 30px 0 19px 0;
+}
+#wrap main .parking_state .parking_info p:nth-of-type(2) {
+    font-size: 70px;
+    font-weight: bold;
+}
+#wrap main .parking_state .parking_info p span {
+    font-weight: bold;
+    color: #223E94;
+}
+#wrap main .parking_state .parking_info .parking_location,
+#wrap main .parking_state .parking_info .parking_time,
+#wrap main .parking_state .parking_info .parking_timepass {
+    position: relative;
+    width: 33.33%;
+}
+
+#wrap main .parking_state .parking_info .bookmark {
+    position: absolute;
+    right: 26px;
+    top: 26px;
+}
+
+
+#wrap main .parking_state .parking_price {
+    width: 1341px;
+    height: 155px;
+    position: relative;
+    text-align: center;
+}
+#wrap main .parking_state .parking_price p {
+    font-size: 60px;
+    line-height: 155px;
+}
+#wrap main .parking_state .parking_price p span {
+    font-size: 70px;
+    font-weight: bold;
+    color: #223E94;
+}
+#wrap main .parking_state .parkingLot_info {
+    position: relative;
+    width: 1341px;
+    height: 96px;
+    background: var(--companyColor);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+#wrap main .parking_state .parkingLot_info span {
+    font-size: 28px;
+    color: #fff;
+    padding-left: 85px;
+    line-height: 96px;
+}
+#wrap main .parking_state .parkingLot_info span:nth-of-type(2) {
+    padding-left: 231px;
+}
+#wrap main .indicators {
+    position: relative;
+    top: -84px;
+    width: 1341px;
+    height: 21px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 37px;
+}
+#wrap main .indicators div.fill {
+    background: var(--companyColor);
+}
+#wrap main .indicators div {
+    width: 21px;
+    height: 21px;
+    background: #d7d7d7;
+    border-radius: 50%;
+}
+#wrap main .business_part {
+    position: relative;
+    width: 1341px;
+    height: 282px;
+    display: flex;
+    margin: 0 auto 50px;
+    justify-content: space-between;
+    position: relative;
+}
+#wrap main .business_part a {
+    top: 66px;
+    width: 644px;
+    height: 282px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#wrap main .business_part a img {
+    position: absolute;
+    width: 644px;
+    height: 282px;
+}
+#wrap main .business_part a p {
+    position: absolute;
+    font-size: 48px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.banner_container {
+    width: 1920px;
+    height: 282px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#wrap main .floating {
+    position: fixed;
+    bottom: 30px;
+    right: 106px;
+    width: 77px;
+    gap: 20px;
+}
+
+#wrap main .floating .AIvoice,
+#wrap main .floating .business,
+#wrap main .floating .floatingTop  {
+    padding-bottom: 20px;
+}
+#wrap main .floating img {
+    width: 77px;
+    height: 77px;
+}
+
+
+
+
+/* ====================
+    footer
+====================*/
+footer {
+    width: 100%;
+    height: 192px;
+    z-index: 2;
+    box-shadow: 0 -5px 10px rgba(60, 119, 207, 0.1);
+}
+footer .footerInner {
+    position: relative;
+    width: 1341px;
+    height: 100%;
+    margin: 0 auto;
+}
+footer .footerInner .blogo {
+    position: absolute;
+    top: 44px;
+    width: 154px;
+    height: 30px;
+}
+
+footer .footerInner .blogo img {
+    height: 40px;
+}
+
+footer .footerInner p,
+footer .footerInner span,
+footer .footerInner span a {
+    position: relative;
+    color: #808080;
+    font-size: 19px;
+}
+
+footer .footerInner p {
+    position: relative;
+    top: 100px;
+}
+
+footer .footerInner p span {
+    top: 0;
+}
+footer .footerInner span {
+    position: relative;
+    top: 103px;
+    font-weight: 700;
+}
+footer .footerInner span a {
+    position: relative;
+}
+footer .footerInner .footer_menu {
+    position: absolute;
+    top: 47px;
+    right: 0;
+}
+footer .footerInner .footer_menu a {
+    margin-left: 56px;
+    font-size: 18px;
+    color: var(--companyColor);
+}
+footer .footerInner .footer_menu a:nth-of-type(3) {
+    font-weight: 700;
+}
+footer .footerInner .app {
+    position: absolute;
+    top: 107px;
+    right: 169px;
+}
+footer .footerInner select {
+    position: absolute;
+    width: 160px;
+    height: 37px;
+    border-radius: 5px;
+    top: 107px;
+    right: 0;
+    border: 1px solid #a6a6a6;
+    font-size: 18px;
+    color: #a6a6a6;
+}
+footer .footerInner select option {
+    margin-left: 50px;
+}
+
+/* ====================
+    popup 0910 추가함
+====================*/
+
+#ai_audio_popup {
+    position: fixed;
+    width: 566px;
+    height: 508px;
+    z-index: 10;
+    top: 50%; /* 화면 상단에서 50% */
+    left: 50%; /* 화면 왼쪽에서 50% */
+    transform: translate(-50%, -50%); /* 자신 크기의 50%만큼 좌우로 이동 */
+    display: none;
+}
+
+#ai_audio_popup button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.ai_popup_header {
+    height: 69px;
+    display: flex;
+    background-color: var(--companyColor);
+    padding: 18px 110px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.ai_popup_main {
+    width: 566px;
+    height: 439px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 5px 10px rgba(60, 119, 207, 0.7);
+}
+
+.ai_popup_header>h2,
+.ai_popup_header>button {
+    color: #fff;
+    font-size: 30px;
+}
+
+.ai_popup_header>button {
+    position: absolute;
+    right: 30px;
+}
+
+.ai_popup_main {
+    background-color: #fff;
+}
+
+.text1,
+.text2,
+.text_container>p {
+    font-size: 30px;
+    text-align: center;
+    color: var(--companyColor);
+}
+
+.text1 {
+    padding-top: 20px;
+}
+
+.text2 {
+    padding-top: 5px;
+}
+
+.text_container>p {
+    padding-top: 20px;
+}
+
+.button_container {
+    padding-top: 20px;
+    gap: 20px;
+}
+.button_container .no {
+    background-color: #fff;
+}
+.button_container .no>button {
+    color: var(--companyColor);
+}
+
+.aibutton {
+    width: 449px;
+    height: 63px;
+    line-height: 63px;
+    border-radius: 30px;
+    background-color: var(--companyColor);
+    border: 3px solid var(--companyColor);
+    margin: 15px auto;
+    text-align: center;
+}
+
+.aibutton>button {
+    font-size: 30px;
+    line-height: 63px;
+    color: #fff;
+}
+
+.aibutton button>img {
+    padding-top: 11px;
+}
+
+.test {
+    display: flex;
+    margin: 0 auto;
+    gap: 10px;
+}
+

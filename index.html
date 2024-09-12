@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>메인</title>
+    <link rel="stylesheet" href="./css/index-style.css">
+
+    <!-- 0910 추가 -->
+    <meta property="og:title" content="easyPcar">
+    <meta property="og:description" content="주차관리시스템">
+    <meta property="og:image" content="./images/urlImg.png">
+    <meta property="og:url" content="https://jjong-ara.github.io/YeochaJeocha/">
+    
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/index-script.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <!-- ====================
+            header
+        ==================== -->
+        <header>
+            <div class="headerInner">
+                <div class="headerIcon_container">
+                    <div class="left_icon">
+                        <!-- 토글 --> 
+                        <div id="main-toggle">
+                            <button><img src="./images/svg/toggle.svg" alt="토글 아이콘"></button>
+                            <p>메뉴</p>
+                        </div>
+                        <!-- 토글버튼 클릭 시 실행되는 사이드 메뉴바 -->
+                        <div id="siderBar" class="side-bar">
+                            <div class="side-bar-header">
+                                <button id="side-closeToggle">
+                                    <img src="./images/svg/close.svg" alt="토글 아이콘">
+                                </button>
+                            </div>
+                            <ul class="mainMenu">
+                                <li class="accordion-item">
+                                    <a class="accordion-toggle">
+                                        <div class="title">
+                                            <img src="./images/svg/mainMenu1.svg" alt="주차 예약">
+                                            <p>주차 예약</p>
+                                        </div>
+                                        <img src="./images/svg/bottomArrow.svg" alt="서브메뉴 펼치기">
+                                    </a>
+                                    <ul class="subMenu">
+                                        <li><a href="#"><img src="./images/svg/주차장검색.svg" alt="주차장 검색">주차장 검색</a></li>
+                                        <li><a href="#"><img src="./images/svg/주차예약신청.svg" alt="주차예약 신청">주차예약 신청</a></li>
+                                        <li><a href="#"><img src="./images/svg/신청내역확인.svg" alt="신청내역 확인/변경">신청내역 확인/변경</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion-item">
+                                    <a class="accordion-toggle">
+                                        <div class="title">
+                                            <img src="./images/svg/mainMenu2.svg" alt="마이페이지">
+                                            <p>마이페이지</p>
+                                        </div>
+                                        <img src="./images/svg/bottomArrow.svg" alt="서브메뉴 펼치기">
+                                    </a>
+                                    <ul class="subMenu">
+                                        <li><a href="#"><img src="./images/svg/내정보.svg" alt="내 정보">내 정보</a></li>
+                                        <li><a href="#"><img src="./images/svg/정기권관리.svg" alt="정기권 관리">정기권 관리</a></li>
+                                        <li><a href="#"><img src="./images/svg/주차기록.svg" alt="주차기록">주차기록</a></li>
+                                        <li><a href="#"><img src="./images/svg/내후기.svg" alt="내 후기">내 후기</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion-item">
+                                    <a href="./sub.html" class="accordion-toggle">
+                                        <div class="title">
+                                            <img src="./images/svg/mainMenu2.svg" alt="미납요금 결제">
+                                            <p>미납요금 결제</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="accordion-item">
+                                    <a class="accordion-toggle">
+                                        <div class="title">
+                                            <img src="./images/svg/mainMenu2.svg" alt="주차요금 환불">
+                                            <p>주차요금 환불</p>
+                                        </div>
+                                        <img src="./images/svg/bottomArrow.svg" alt="서브메뉴 펼치기">
+                                    </a>
+                                    <ul class="subMenu">
+                                        <li><a href="#"><img src="./images/svg/요금환불신청.svg" alt="요금 환불 신청">요금 환불 신청</a></li>
+                                        <li><a href="#"><img src="./images/svg/환불내역.svg" alt="환불 내역/결과 조회">환불 내역/결과 조회</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion-item">
+                                    <a class="accordion-toggle">
+                                        <div class="title">
+                                            <img src="./images/svg/mainMenu4.svg" alt="멤버십 정기권">
+                                            <p>멤버십 정기권</p>
+                                        </div>
+                                        <img src="./images/svg/bottomArrow.svg" alt="서브메뉴 펼치기">
+                                    </a>
+                                    <ul class="subMenu">
+                                        <li><a href="#"><img src="./images/svg/정기권조회.svg" alt="정기권 조회/신청">정기권 조회/신청</a></li>
+                                        <li><a href="#"><img src="./images/svg/정기권대기현황.svg" alt="정기권 대기 현황">정기권 대기 현황</a></li>
+                                        <li><a href="#"><img src="./images/svg/정기권환불.svg" alt="정기권 환불">정기권 환불</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion-item">
+                                    <a class="accordion-toggle">
+                                        <div class="title">
+                                            <img src="./images/svg/mainMenu5.svg" alt="제휴 공유 주차장">
+                                            <p>제휴 공유 주차장</p>
+                                        </div>
+                                        <img src="./images/svg/bottomArrow.svg" alt="서브메뉴 펼치기">
+                                    </a>
+                                    <ul class="subMenu">
+                                        <li><a href="#"><img src="./images/svg/제휴주차장조회.svg" alt="제휴 주차장 조회">제휴 주차장 조회</a></li>
+                                        <li><a href="#"><img src="./images/svg/내주차장공유등록.svg" alt="내 주차장 공유 등록">내 주차장 공유 등록</a></li>
+                                        <li><a href="#"><img src="./images/svg/제휴주차장매칭문의.svg" alt="제휴 주차장 매칭 문의">제휴 주차장 매칭 문의</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion-item">
+                                    <a class="accordion-toggle">
+                                        <div class="title">
+                                            <img src="./images/svg/mainMenu6.svg" alt="이용안내">
+                                            <p>이용안내</p>
+                                        </div>
+                                        <img src="./images/svg/bottomArrow.svg" alt="서브메뉴 펼치기">
+                                    </a>
+                                    <ul class="subMenu">
+                                        <li><a href="#"><img src="./images/svg/공지사항.svg" alt="공지사항">공지사항</a></li>
+                                        <li><a href="#"><img src="./images/svg/자주묻는질문.svg" alt="자주 묻는 질문">자주 묻는 질문</a></li>
+                                        <li><a href="#"><img src="./images/svg/개인정보처리방침.svg" alt="개인정보처리방침">개인정보처리방침</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h2 class="logo"><a href="./index.html"><img src="./images/svg/logo.svg" alt="로고"></a></h2>
+                    <div class="right_icon">
+                        <div class="headerInfo">
+                            <a href="./mypage.html" class="mypage">
+                                <img src="./images/svg/mypage.svg" alt="마이페이지">
+                                <div class="money">잔액 : <span>100,000원</span> </div>
+                            </a>
+                            <div class="bell">
+                                <img src="./images/svg/Bell_fill.svg" alt="알림">
+                                <div class="noticePopup"><img src="./images/noticePopup.png" alt="알림창"></div>
+                            </div>
+                            <div class="log">
+                                <a href="./login.html" class="logout">로그아웃</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ====================
+            main
+        ==================== -->
+        <main>
+            <div class="banner"><img src="./images/mainBanner.png" alt="배너"></div>
+            <div class="search">
+                <div class="search_local hoverAi" data-audio="./aiAudio/01_지역을_선택하여_고객님과_가장_가까운_주차장을_선택할_수_있습니다.mp3">
+                    <p>지역 검색<span>▼</span></p>
+                </div>
+                <div class="search_date hoverAi" data-audio="./aiAudio/02_날짜를_선택하여_주차를_원하는_날짜를_선택할_수_있습니다.mp3">
+                    <p>날짜 검색<span>▼</span></p>
+                </div>
+                <div class="search_keyword hoverAi" data-audio="./aiAudio/03_원하는_주차장_주차장_이름_지역_등을_직접_검색할_수_있습니다.mp3">
+                    <!-- <p>직접 검색</p> -->
+                    <input type="text" placeholder="직접 검색" maxlength="50">
+                </div>
+                <div class="search_kind hoverAi" data-audio="./aiAudio/05_실내_야외_타워형_주차장_등_주차장_종류를_선택할_수_있습니다.mp3">
+                    <p>주차장 종류<span>▼</span></p>
+                </div>
+                <div class="search_option">
+                    <div class="ticket hoverAi" data-audio="./aiAudio/06_월_정기권_결제가_가능한_주차장을_검색합니다.mp3"><img src="./images/svg/Check_ring.svg" class="checkBox" alt="검색바 체크버튼"><p>정기권 여부</p></div>
+                    <div class="family hoverAi" data-audio="./aiAudio/07_가족_주차장_이용이_가능한_주차장을_선택합니다.mp3"><img src="./images/svg/Check_ring.svg" class="checkBox" alt="검색바 체크버튼" ><p>가족</p></div>
+                    <div class="disabled hoverAi" data-audio="./aiAudio/08_장애인_주차장_이용이_가능한_주차장을_선택합니다.mp3"><img src="./images/svg/Check_ring.svg" class="checkBox" alt="검색바 체크버튼" ><p>장애인</p></div>
+                    <div class="electricCar hoverAi" data-audio="./aiAudio/09_전기차_충전소_등_관련_서비스를_이용할_수_있는_주차장을_선택합니다.mp3"><img src="./images/svg/Check_ring.svg" class="checkBox" alt="검색바 체크버튼" ><p>전기차</p></div>
+                </div>
+                <div class="search_button hoverAi" data-audio="./aiAudio/04_해당_버튼을_눌러_원하시는_주차장을_검색할_수_있습니다.mp3"><a href="#"></a><img src="./images/svg/search.svg"  alt="검색하기" ></div>
+            </div>
+            <div class="quick">
+                 <a href="#"><img src="./images/svg/quick1.svg" alt="지도 검색"></a>
+                 <a href="#"><img src="./images/svg/quick2.svg" alt="정기권 관리"></a>
+                 <a href="#"><img src="./images/svg/quick3.svg" alt="주차 설정"></a>
+                 <a href="#"><img src="./images/svg/quick4.svg" alt="자동결제"></a>
+            </div>
+            <div class="parking_state">
+                <div class="parking_date"><p>주차한 일자 : 2024.09.03</p></div>
+                <div class="parking_info">
+                    <div class="parking_location">
+                        <p>주차장 이름</p>
+                        <p><span>소망</span></p>
+                    </div>
+                    <div class="parking_time">
+                        <p>입차 시각</p>
+                        <p><span>20 : 21</span></p>
+                    </div>
+                    <div class="parking_timepass">
+                        <p>이용 시간</p>
+                        <p><span>30</span>분</p>
+                    </div>
+                    <div class="bookmark"><img id="bookmarkIcon" src="./images/svg/star_empty.svg" alt="즐겨찾기에 추가하기"></div>
+                </div>
+                <div class="parking_price">
+                    <p>누적 요금 : <span>100,000원</span></p>
+                </div>
+                <div class="parkingLot_info">
+                    <span>주차장 연락처: 070-8282-5959</span>
+                    <span>주차장 주소: 수원시 팔달구 팔달동 팔달로 123</span>
+                </div>
+            </div>
+            <div class="indicators">
+                <div class="fill"></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="business_part">
+                <a href="#"><img src="./images/rentalCar.png" alt="렌터카 대여 문의"><p>렌터카 대여 문의</p></a>
+                <a href="#"><img src="./images/shared.png" alt="내 주차장 공유 등록"><p>내 주차장 공유 등록</p></a>
+            </div>
+
+            <!-- 광고배너 -->
+            <div class="banner_container">
+                <a href="#"><img src="./images/eventBanner.png" alt="삼성카드 결제하면 최대 5천원 혜택"></a>
+            </div>
+            <!-- ====================
+                side popup
+            ==================== -->
+
+            <div class="floating">
+                <div class="AIvoice" id="aiButton" data-audio="./aiAudio/10_해당_버튼을_누르면_팝업창에서_선택하지_못한_이용자도_다시_한_번_음성_안내_기능을_사용.mp3"><img id="aiAudioImage" src="./images/svg/floatingAinormal.svg" alt="AI 음성지원 서비스" onclick="changeImage()"></div>
+                <div class="business" ><img id="aiBusinessImage" src="./images/svg/business.svg" alt="비즈니스서비스" ></div>
+                <div class="floatingTop" id="topBtn"><img src="./images/svg/floatingTop.svg" alt="맨 위로 가기"></div>
+                <div class="floatingBottom" id="bottomBtn"><img src="./images/svg/floatingBottom.svg" alt="맨 아래로 가기"></div>
+            </div>
+
+            <!-- ====================
+                footer
+            ==================== -->
+            <footer>
+                <div class="footerInner">
+                    <div class="blogo"><img src="./images/svg/logo.svg" alt="바텀 로고"></div>
+                    <p><span>(주)여차저차</span> | <span>대표자</span> 홍길동 | <span>주소</span> 수원시 팔달구 팔달동 팔달로 수원역 3층</p>
+                    <span>사업자번호<a href="#"> 070-3216-6548 </a></span><span>고객센터<a href="#"> 1688-1234 </a></span>
+                    <div class="footer_menu">
+                        <a href="#">회사 소개</a>
+                        <a href="#">주차장 운영 현황</a>
+                        <a href="#">개인정보처리방침</a>
+                    </div>
+                    <a href="#" class="app"><img src="./images/svg/GooglePlay.svg" alt="구글플레이에서 어플 다운로드받기"></a>
+                    <select size="1" id="familysite">
+                        <option value="선택" selected>패밀리 사이트</option>
+                        <option value="https://www.naver.com/">네이버</option>
+                    </select>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- ====================
+        popup 0910 추가함 (ai_click.svg도 저장함)
+    ==================== -->
+
+    <div id="ai_audio_popup">
+        <div class="ai_popup_header">
+            <h2>이용에 도움이 필요하신가요?</h2>
+            <button id="ai_close">X</button>
+        </div>
+        <div class="ai_popup_main">
+            <div class="text_container">
+                <h3 class="text1">
+                    음성안내로 이용을 도와드립니다.
+                </h3>
+                <p>음성안내를 듣기 어려우시다면</p>
+                <h3 class="text2">
+                    자막으로 안내드립니다.
+                </h3>
+            </div>
+            <div class="button_container">
+                <div class="aibutton">
+                    <button class="test">
+                        <img src="././images/svg/ai_audio_notice.svg" alt="ai자막 안내팝업청">
+                        테스트
+                </button>
+                </div>
+                <div class="aibutton">
+                    <button>
+                        자막안내
+                    </button>
+                </div>
+                <div class="aibutton no">
+                    <button>
+                        필요없음
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

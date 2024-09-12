@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>로그인</title>
+    <link rel="stylesheet" href="./css/login-style.css">
+    <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/login-script.js" defer></script>
+</head>
+<body>
+    <div id="wrap">
+        <!-- ====================
+            header
+        ==================== -->
+        <header>
+            <div class="headerInner">
+                <div class="headerIcon_container">
+                    <div class="left_icon">
+                        <!-- 토글 --> 
+                        <div id="main-toggle">
+                            <button><img src="./images/svg/toggle.svg" alt="토글 아이콘"></button>
+                            <p>메뉴</p>
+                        </div>
+                        <!-- 토글버튼 클릭 시 실행되는 사이드 메뉴바 -->
+                        <div id="siderBar" class="side-bar">
+                            <div class="side-bar-header">
+                                <button id="side-closeToggle">
+                                    <img src="./images/svg/close.svg" alt="토글 아이콘">
+                                </button>
+                            </div>
+                            <ul class="mainMenu">
+                                <li class="accordion-item">
+                                    <a class="accordion-toggle">
+                                        <div class="title">
+                                            <img src="./images/svg/mainMenu1.svg" alt="주차 예약">
+                                            <p>주차 예약</p>
+                                        </div>
+                                        <img src="./images/svg/bottomArrow.svg" alt="서브메뉴 펼치기">
+                                    </a>
+                                    <ul class="subMenu">
+                                        <li><a href="#"><img src="./images/svg/주차장검색.svg" alt="주차장 검색">주차장 검색</a></li>
+                                        <li><a href="#"><img src="./images/svg/주차예약신청.svg" alt="주차예약 신청">주차예약 신청</a></li>
+                                        <li><a href="#"><img src="./images/svg/신청내역확인.svg" alt="신청내역 확인/변경">신청내역 확인/변경</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion-item">
+                                    <a class="accordion-toggle">
+                                        <div class="title">
+                                            <img src="./images/svg/mainMenu2.svg" alt="마이페이지">
+                                            <p>마이페이지</p>
+                                        </div>
+                                        <img src="./images/svg/bottomArrow.svg" alt="서브메뉴 펼치기">
+                                    </a>
+                                    <ul class="subMenu">
+                                        <li><a href="#"><img src="./images/svg/내정보.svg" alt="내 정보">내 정보</a></li>
+                                        <li><a href="#"><img src="./images/svg/정기권관리.svg" alt="정기권 관리">정기권 관리</a></li>
+                                        <li><a href="#"><img src="./images/svg/주차기록.svg" alt="주차기록">주차기록</a></li>
+                                        <li><a href="#"><img src="./images/svg/내후기.svg" alt="내 후기">내 후기</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion-item">
+                                    <a href="./sub.html" class="accordion-toggle">
+                                        <div class="title">
+                                            <img src="./images/svg/mainMenu2.svg" alt="미납요금 결제">
+                                            <p>미납요금 결제</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="accordion-item">
+                                    <a class="accordion-toggle">
+                                        <div class="title">
+                                            <img src="./images/svg/mainMenu2.svg" alt="주차요금 환불">
+                                            <p>주차요금 환불</p>
+                                        </div>
+                                        <img src="./images/svg/bottomArrow.svg" alt="서브메뉴 펼치기">
+                                    </a>
+                                    <ul class="subMenu">
+                                        <li><a href="#"><img src="./images/svg/요금환불신청.svg" alt="요금 환불 신청">요금 환불 신청</a></li>
+                                        <li><a href="#"><img src="./images/svg/환불내역.svg" alt="환불 내역/결과 조회">환불 내역/결과 조회</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion-item">
+                                    <a class="accordion-toggle">
+                                        <div class="title">
+                                            <img src="./images/svg/mainMenu4.svg" alt="멤버십 정기권">
+                                            <p>멤버십 정기권</p>
+                                        </div>
+                                        <img src="./images/svg/bottomArrow.svg" alt="서브메뉴 펼치기">
+                                    </a>
+                                    <ul class="subMenu">
+                                        <li><a href="#"><img src="./images/svg/정기권조회.svg" alt="정기권 조회/신청">정기권 조회/신청</a></li>
+                                        <li><a href="#"><img src="./images/svg/정기권대기현황.svg" alt="정기권 대기 현황">정기권 대기 현황</a></li>
+                                        <li><a href="#"><img src="./images/svg/정기권환불.svg" alt="정기권 환불">정기권 환불</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion-item">
+                                    <a class="accordion-toggle">
+                                        <div class="title">
+                                            <img src="./images/svg/mainMenu5.svg" alt="제휴 공유 주차장">
+                                            <p>제휴 공유 주차장</p>
+                                        </div>
+                                        <img src="./images/svg/bottomArrow.svg" alt="서브메뉴 펼치기">
+                                    </a>
+                                    <ul class="subMenu">
+                                        <li><a href="#"><img src="./images/svg/제휴주차장조회.svg" alt="제휴 주차장 조회">제휴 주차장 조회</a></li>
+                                        <li><a href="#"><img src="./images/svg/내주차장공유등록.svg" alt="내 주차장 공유 등록">내 주차장 공유 등록</a></li>
+                                        <li><a href="#"><img src="./images/svg/제휴주차장매칭문의.svg" alt="제휴 주차장 매칭 문의">제휴 주차장 매칭 문의</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion-item">
+                                    <a class="accordion-toggle">
+                                        <div class="title">
+                                            <img src="./images/svg/mainMenu6.svg" alt="이용안내">
+                                            <p>이용안내</p>
+                                        </div>
+                                        <img src="./images/svg/bottomArrow.svg" alt="서브메뉴 펼치기">
+                                    </a>
+                                    <ul class="subMenu">
+                                        <li><a href="#"><img src="./images/svg/공지사항.svg" alt="공지사항">공지사항</a></li>
+                                        <li><a href="#"><img src="./images/svg/자주묻는질문.svg" alt="자주 묻는 질문">자주 묻는 질문</a></li>
+                                        <li><a href="#"><img src="./images/svg/개인정보처리방침.svg" alt="개인정보처리방침">개인정보처리방침</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h2 class="logo"><a href="./index.html"><img src="./images/svg/logo.svg" alt="로고"></a></h2>
+                    <div class="right_icon">
+                        <div class="headerInfo">
+                            <a href="./mypage.html" class="mypage">
+                                <img src="./images/svg/mypage.svg" alt="마이페이지">
+                                <div class="money">잔액 : <span>100,000원</span> </div>
+                            </a>
+                            <div class="bell">
+                                <img src="./images/svg/Bell_fill.svg" alt="알림">
+                                <div class="noticePopup"><img src="./images/noticePopup.png" alt="알림창"></div>
+                            </div>
+                            <div class="log">
+                                <a href="./login.html" class="logout">로그아웃</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ====================
+            main
+        ==================== -->
+        <main>
+            <h2>로그인</h2>
+            <div class="IdPw">
+                <div class="ID">
+                    <input type="text" id="username" placeholder="아이디">
+                </div>
+                <div class="Pass">
+                    <input type="password" id="password" placeholder="비밀번호">
+                </div>
+            </div>
+            <div class="stayLogin">
+                <input type="checkbox" id="myCheckbox" name="myCheckbox" value="example"><p>로그인 유지</p>
+            </div>
+            <button class="loginBtn">로그인</button>
+            <div class="loginSub">
+                <div class="find"><a href="#">아이디 찾기</a><span> / </span><a href="#">비밀번호 찾기</a></div>
+                <a href="./join.html">회원가입</a>
+            </div>
+            <div class="snsLogin">
+                <a id="kakao-login-btn" href="#"><img src="./images/svg/floatingKakao.svg" alt="카카오톡 회원가입"></a>
+            <a href="#"><img src="./images/svg/네이버로그인.svg" alt="네이버 회원가입"></a>
+            <a href="#"><img src="./images/svg/구글회원가입.svg" alt="구글 회원가입"></a>
+            </div>
+        </main>
+
+
+
+
+        <!-- ====================
+            footer
+        ==================== -->
+        <footer>
+            <div class="footerInner">
+                <div class="blogo"><img src="./images/svg/logo.svg" alt="바텀 로고"></div>
+                <p><span>(주)여차저차</span> | <span>대표자</span> 홍길동 | <span>주소</span> 수원시 팔달구 팔달동 팔달로 수원역 3층</p>
+                <span>사업자번호<a href="#"> 070-3216-6548 </a></span><span>고객센터<a href="#"> 1688-1234 </a></span>
+                <div class="footer_menu">
+                    <a href="#">회사 소개</a>
+                    <a href="#">주차장 운영 현황</a>
+                    <a href="#">개인정보처리방침</a>
+                </div>
+                <a href="#" class="app"><img src="./images/svg/GooglePlay.svg" alt="구글플레이에서 어플 다운로드받기"></a>
+                <select size="1" id="familysite">
+                    <option value="선택" selected>패밀리 사이트</option>
+                    <option value="https://www.naver.com/">네이버</option>
+                </select>
+            </div>
+        </footer>
+
+
+        
+        
+    </div>
+</body>
+</html>

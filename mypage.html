@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>마이페이지</title>
+    <link rel="stylesheet" href="./css/mypage-style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/mypage-script.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <!-- ====================
+            header
+        ==================== -->
+        <header>
+            <div class="headerInner">
+                <div class="headerIcon_container">
+                    <div class="left_icon">
+                        <!-- 토글 --> 
+                        <div id="main-toggle">
+                            <button><img src="./images/svg/toggle.svg" alt="토글 아이콘"></button>
+                            <p>메뉴</p>
+                        </div>
+                        <!-- 토글버튼 클릭 시 실행되는 사이드 메뉴바 -->
+                        <div id="siderBar" class="side-bar">
+                            <div class="side-bar-header">
+                                <button id="side-closeToggle">
+                                    <img src="./images/svg/close.svg" alt="토글 아이콘">
+                                </button>
+                            </div>
+                            <ul class="mainMenu">
+                                <li class="accordion-item">
+                                    <a class="accordion-toggle">
+                                        <div class="title">
+                                            <img src="./images/svg/mainMenu1.svg" alt="주차 예약">
+                                            <p>주차 예약</p>
+                                        </div>
+                                        <img src="./images/svg/bottomArrow.svg" alt="서브메뉴 펼치기">
+                                    </a>
+                                    <ul class="subMenu">
+                                        <li><a href="#"><img src="./images/svg/주차장검색.svg" alt="주차장 검색">주차장 검색</a></li>
+                                        <li><a href="#"><img src="./images/svg/주차예약신청.svg" alt="주차예약 신청">주차예약 신청</a></li>
+                                        <li><a href="#"><img src="./images/svg/신청내역확인.svg" alt="신청내역 확인/변경">신청내역 확인/변경</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion-item">
+                                    <a class="accordion-toggle">
+                                        <div class="title">
+                                            <img src="./images/svg/mainMenu2.svg" alt="마이페이지">
+                                            <p>마이페이지</p>
+                                        </div>
+                                        <img src="./images/svg/bottomArrow.svg" alt="서브메뉴 펼치기">
+                                    </a>
+                                    <ul class="subMenu">
+                                        <li><a href="#"><img src="./images/svg/내정보.svg" alt="내 정보">내 정보</a></li>
+                                        <li><a href="#"><img src="./images/svg/정기권관리.svg" alt="정기권 관리">정기권 관리</a></li>
+                                        <li><a href="#"><img src="./images/svg/주차기록.svg" alt="주차기록">주차기록</a></li>
+                                        <li><a href="#"><img src="./images/svg/내후기.svg" alt="내 후기">내 후기</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion-item">
+                                    <a href="./sub.html" class="accordion-toggle">
+                                        <div class="title">
+                                            <img src="./images/svg/mainMenu2.svg" alt="미납요금 결제">
+                                            <p>미납요금 결제</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="accordion-item">
+                                    <a class="accordion-toggle">
+                                        <div class="title">
+                                            <img src="./images/svg/mainMenu2.svg" alt="주차요금 환불">
+                                            <p>주차요금 환불</p>
+                                        </div>
+                                        <img src="./images/svg/bottomArrow.svg" alt="서브메뉴 펼치기">
+                                    </a>
+                                    <ul class="subMenu">
+                                        <li><a href="#"><img src="./images/svg/요금환불신청.svg" alt="요금 환불 신청">요금 환불 신청</a></li>
+                                        <li><a href="#"><img src="./images/svg/환불내역.svg" alt="환불 내역/결과 조회">환불 내역/결과 조회</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion-item">
+                                    <a class="accordion-toggle">
+                                        <div class="title">
+                                            <img src="./images/svg/mainMenu4.svg" alt="멤버십 정기권">
+                                            <p>멤버십 정기권</p>
+                                        </div>
+                                        <img src="./images/svg/bottomArrow.svg" alt="서브메뉴 펼치기">
+                                    </a>
+                                    <ul class="subMenu">
+                                        <li><a href="#"><img src="./images/svg/정기권조회.svg" alt="정기권 조회/신청">정기권 조회/신청</a></li>
+                                        <li><a href="#"><img src="./images/svg/정기권대기현황.svg" alt="정기권 대기 현황">정기권 대기 현황</a></li>
+                                        <li><a href="#"><img src="./images/svg/정기권환불.svg" alt="정기권 환불">정기권 환불</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion-item">
+                                    <a class="accordion-toggle">
+                                        <div class="title">
+                                            <img src="./images/svg/mainMenu5.svg" alt="제휴 공유 주차장">
+                                            <p>제휴 공유 주차장</p>
+                                        </div>
+                                        <img src="./images/svg/bottomArrow.svg" alt="서브메뉴 펼치기">
+                                    </a>
+                                    <ul class="subMenu">
+                                        <li><a href="#"><img src="./images/svg/제휴주차장조회.svg" alt="제휴 주차장 조회">제휴 주차장 조회</a></li>
+                                        <li><a href="#"><img src="./images/svg/내주차장공유등록.svg" alt="내 주차장 공유 등록">내 주차장 공유 등록</a></li>
+                                        <li><a href="#"><img src="./images/svg/제휴주차장매칭문의.svg" alt="제휴 주차장 매칭 문의">제휴 주차장 매칭 문의</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion-item">
+                                    <a class="accordion-toggle">
+                                        <div class="title">
+                                            <img src="./images/svg/mainMenu6.svg" alt="이용안내">
+                                            <p>이용안내</p>
+                                        </div>
+                                        <img src="./images/svg/bottomArrow.svg" alt="서브메뉴 펼치기">
+                                    </a>
+                                    <ul class="subMenu">
+                                        <li><a href="#"><img src="./images/svg/공지사항.svg" alt="공지사항">공지사항</a></li>
+                                        <li><a href="#"><img src="./images/svg/자주묻는질문.svg" alt="자주 묻는 질문">자주 묻는 질문</a></li>
+                                        <li><a href="#"><img src="./images/svg/개인정보처리방침.svg" alt="개인정보처리방침">개인정보처리방침</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h2 class="logo"><a href="./index.html"><img src="./images/svg/logo.svg" alt="로고"></a></h2>
+                    <div class="right_icon">
+                        <div class="headerInfo">
+                            <a href="./mypage.html" class="mypage">
+                                <img src="./images/svg/mypage.svg" alt="마이페이지">
+                                <div class="money">잔액 : <span>100,000원</span> </div>
+                            </a>
+                            <div class="bell">
+                                <img src="./images/svg/Bell_fill.svg" alt="알림">
+                                <div class="noticePopup"><img src="./images/noticePopup.png" alt="알림창"></div>
+                            </div>
+                            <div class="log">
+                                <a href="./login.html" class="logout">로그아웃</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ====================
+            main
+        ==================== -->
+        <main>
+            <div class="profile">
+                <img src="./images/svg/mypage_photo.svg" alt="프로필 사진" class="picture">
+                <div class="userInfo">
+                    <p class="myName">초보운전자<span class="userNumber">#240903</span></p>
+                    <div class="membership">
+                        <img src="./images/svg/mypage_classIcon.svg" alt="멤버십 등급">VIP
+                        <div class="membershipPopup"><img src="./images/membershipPopup.png" alt="멤버십 팝업"></div>
+                    </div>
+                    
+                </div>
+                <div class="options"><img src="./images/svg/mypage_option.svg" alt="설정"></div>
+            </div>
+
+            
+    
+
+            <div class="myInfo">
+                <ul class="Balance">
+                    <li>
+                        <h2 class="title">현재 잔액 : 100,000원</h2>
+                        <span>▾ 내 쿠폰 확인하기</span>
+                    </li>
+                    <li>
+                        <button class="charge">충전하기</button>
+                        <button class="refund">환불하기</button>
+                    </li>
+                </ul>
+                <ul class="myCar">
+                    <li>
+                        <h2 class="title">내 차량</h2>
+                    </li>
+                    <li>
+                        <div class="carList">
+                            <table>
+                                <tr>
+                                    <td>42주 92**</td>
+                                    <td>K5</td>
+                                    <td>준중형</td>
+                                </tr>
+                                <tr>
+                                    <td>62가 02**</td>
+                                    <td>올뉴 쏘렌토</td>
+                                    <td>SUV</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="myTF">
+                <div class="TFbox">
+                    <h2 class="title on">정기권 관리</h2>
+                    <ul class="myTicket">
+                        <li>
+                            <ul>
+                                <li>
+                                    <div class="parkingLogo"><img src="./images/svg/mypage_photo.svg" alt="주차장 로고"></div>
+                                    <p class="name">소망주차장</p>
+                                    <span class="date">2024.09.03 - 2024.12.03</span>
+                                </li>
+                                <li>
+                                    <p class="price">10,000원</p>
+                                    <span class="card">신한 체크 결제(매달 3일)</span>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <div class="parkingLogo"><img src="./images/svg/mypage_photo.svg" alt="주차장 로고"></div>
+                                    <p class="name">믿음주차장</p>
+                                    <span class="date">2024.09.03 - 2024.12.03</span>
+                                </li>
+                                <li>
+                                    <p class="price">10,000원</p>
+                                    <span class="card">신한 체크 결제(매달 3일)</span>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h2 class="title fv">즐겨찾기</h2>
+                    <ul class="favoritesInfo">
+                        <li>
+                            <ul>
+                                <li>
+                                    <div class="parkingLogo"><img src="./images/svg/mypage_photo.svg" alt="주차장 로고"></div>
+                                    <p class="name">소망주차장</p>
+                                </li>
+                                <li>
+                                    <p class="place">행궁동</p>
+                                    <div class="marking"><img src="./images/svg/mypage_star.svg" alt="즐겨찾기 표시"></div>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <div class="parkingLogo"><img src="./images/svg/mypage_photo.svg" alt="주차장 로고"></div>
+                                    <p class="name">믿음주차장</p>
+                                </li>
+                                <li>
+                                    <p class="place">연남동</p>
+                                    <div class="marking"><img src="./images/svg/mypage_star.svg" alt="즐겨찾기 표시"></div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="parkingRecord">
+                <h2 class="title">주차기록</h2>
+                <div class="recordList">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="./images/svg/mypage_star.svg" alt="즐겨찾기">
+                                <p>소망주차장</p>
+                            </td>
+                            <td>42주 92**</td>
+                            <td>행궁동</td>
+                            <td>3시간</td>
+                            <td>3000원</td>
+                            <td><img src="./images/svg/mypage_close.svg" alt="닫기"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="./images/svg/mypage_star.svg" alt="즐겨찾기">
+                                <p>믿음주차장</p>
+                            </td>
+                            <td>62누 02**</td>
+                            <td>연남동</td>
+                            <td>1시간</td>
+                            <td>1500원</td>
+                            <td><img src="./images/svg/mypage_close.svg" alt="닫기"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="./images/svg/mypage_starGray.svg" alt="즐겨찾기">
+                                <p>사랑주차장</p>
+                            </td>
+                            <td>42주 92**</td>
+                            <td>행궁동</td>
+                            <td>3시간</td>
+                            <td>4000원</td>
+                            <td><img src="./images/svg/mypage_close.svg" alt="닫기"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="./images/svg/mypage_starGray.svg" alt="즐겨찾기">
+                                <p>소중주차장</p>
+                            </td>
+                            <td>42주 92**</td>
+                            <td>행궁동</td>
+                            <td>3시간</td>
+                            <td>2000원</td>
+                            <td><img src="./images/svg/mypage_close.svg" alt="닫기"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="./images/svg/mypage_starGray.svg" alt="즐겨찾기">
+                                <p>소중주차장</p>
+                            </td>
+                            <td>42주 92**</td>
+                            <td>행궁동</td>
+                            <td>3시간</td>
+                            <td>2000원</td>
+                            <td><img src="./images/svg/mypage_close.svg" alt="닫기"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="./images/svg/mypage_starGray.svg" alt="즐겨찾기">
+                                <p>소중주차장</p>
+                            </td>
+                            <td>42주 92**</td>
+                            <td>행궁동</td>
+                            <td>3시간</td>
+                            <td>2000원</td>
+                            <td><img src="./images/svg/mypage_close.svg" alt="닫기"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="./images/svg/mypage_starGray.svg" alt="즐겨찾기">
+                                <p>소중주차장</p>
+                            </td>
+                            <td>42주 92**</td>
+                            <td>행궁동</td>
+                            <td>3시간</td>
+                            <td>2000원</td>
+                            <td><img src="./images/svg/mypage_close.svg" alt="닫기"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="myReview">
+                <h2 class="title">내 리뷰</h2>
+                <div class="reviewList">
+                    <ul>
+                        <li class="photo"></li>
+                        <li class="review">
+                            <div class="detail">
+                                <p>소망주차장</p>
+                                <span>후기를 써주세요!</span>
+                            </div>
+                            <div class="write">등록</div>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="line"></li>
+                    </ul>
+                    <ul>
+                        <li class="photo"></li>
+                        <li class="review">
+                            <div class="detail">
+                                <p>믿음주차장</p>
+                                <span>비싸긴한데 시설이 좋아요</span>
+                            </div>
+                            <div class="remove"><img src="./images/svg/mypage_close.svg" alt="닫기"></div>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="photo"></li>
+                        <li class="review">
+                            <div class="detail">
+                                <p>사랑주차장</p>
+                                <span>비싸고 직원도 별로에요</span>
+                            </div>
+                            <div class="remove"><img src="./images/svg/mypage_close.svg" alt="닫기"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+        </main>
+        
+
+
+
+
+        <!-- ====================
+            footer
+        ==================== -->
+        <footer>
+            <div class="footerInner">
+                <div class="blogo"><img src="./images/svg/logo.svg" alt="바텀 로고"></div>
+                <p><span>(주)여차저차</span> | <span>대표자</span> 홍길동 | <span>주소</span> 수원시 팔달구 팔달동 팔달로 수원역 3층</p>
+                <span>사업자번호<a href="#"> 070-3216-6548 </a></span><span>고객센터<a href="#"> 1688-1234 </a></span>
+                <div class="footer_menu">
+                    <a href="#">회사 소개</a>
+                    <a href="#">주차장 운영 현황</a>
+                    <a href="#">개인정보처리방침</a>
+                </div>
+                <a href="#" class="app"><img src="./images/svg/GooglePlay.svg" alt="구글플레이에서 어플 다운로드받기"></a>
+                <select size="1" id="familysite">
+                    <option value="선택" selected>패밀리 사이트</option>
+                    <option value="https://www.naver.com/">네이버</option>
+                </select>
+            </div>
+        </footer>
+
+
+        
+        
+    </div>
+</body>
+</html>

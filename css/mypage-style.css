@@ -1,0 +1,617 @@
+@charset "utf-8";
+
+/* font */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@font-face {
+    font-family: 'NEXEN TIRE';
+    src: url('../font/NEXEN_TIRE_Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* color */
+:root {
+    --companyColor : #3C77CF;
+    --shadowColor : rgba(0, 0, 0, 0.25);
+}
+
+/* reset */
+* {margin: 0;padding: 0;}
+
+a {text-decoration: none;}
+li {list-style: none;}
+p, span, a, h1, h2, h3, h4, h5, h6, td, th, li {color:#000; font-family: 'pretendard';}
+
+
+#wrap header {
+    width: 100%;
+    position: fixed;
+    top: 0;left: 0;
+    z-index: 999999;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(60, 119, 207, 0.1);
+}
+
+/* ====================
+    header
+====================*/
+
+.headerInner {
+    width: 1920px; height: 96px;
+    display: flex;
+    margin: 0 auto;
+}
+
+.headerIcon_container {
+    width: 1342px; height: 96px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 25px;
+    box-sizing: border-box;
+}
+
+.left_icon button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.left_icon p {
+    float: right;
+    font-size: 25px;
+    line-height: 40px;
+    margin-left: 20px;
+    color: var(--companyColor);
+}
+
+/* side-side-bar */
+.side-bar {
+    width: 358px;
+    height: 1080px;
+    z-index: 99999999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-358px);
+}
+
+.side-bar.active {
+    transform: translateX(0); /*사이드바가 화면에 나타남*/
+}
+
+.side-bar-header {
+    height: 100px;
+}
+
+#side-closeToggle{
+    width: 40px; height: 40px;
+    position: absolute;
+    top: 15px;
+    right: 28px;
+    padding-top: 5px;
+}
+
+.mainMenu {
+    margin: 0 0 0 46px;
+}
+.mainMenu li>a {
+    width: 268px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0px;
+}
+.mainMenu li>a .title{
+    font-size: 28px;
+    letter-spacing: -2px;
+    display: flex;
+    gap: 10px;
+}
+
+.subMenu {
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+/* 서브메뉴가 열릴 때 */
+.accordion-item.active .subMenu {
+    display: block;
+}
+
+.subMenu li>a {
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    background-color: rgba(60, 119, 207, 0.2);
+    padding: 18px 0 18px 50px;
+    width: 268px;
+    box-sizing: border-box;
+}
+
+.subMenu li a:hover {
+    background-color: #2c6dcd;
+    color: #fff;
+}
+
+.subside-bar li>a img {
+    width: 24px;
+}
+
+.headerIcon_container .logo {
+    position: absolute;
+    top: 50%;
+    padding-top: 5px;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 요소 크기의 절반만큼 이동 */
+}
+
+.headerIcon_container .logo img {
+    height: 70px;
+}
+
+.right_icon {
+    display: flex;
+}
+
+.headerInfo {
+    display: flex;
+    gap: 15px;
+}
+
+.mypage {
+    display: flex;
+    gap: 8px;
+}
+
+.mypage img {
+    width: 41px;
+    height: 41px;
+    padding-top: 5px;
+}
+
+.money {
+    font-size: 24px;
+    line-height: 41px;
+    color: var(--companyColor);
+    display: flex;
+    gap: 5px;
+    padding-top: 5px;
+}
+
+.money span {
+    color: var(--companyColor);
+}
+
+.bell {
+    color: #223E94;
+    padding-top: 8px;
+    position: relative;
+}
+.bell .noticePopup {
+    display: none;
+}
+.bell:hover .noticePopup,
+.bell:focus .noticePopup {
+    position: absolute;
+    top: 42px;right: -44px;
+    display: block;
+}
+
+
+.log {
+    display: flex;
+    background-color: var(--companyColor);
+    border-radius: 10px;
+    width: 92px;
+    height: 36px;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 11px;
+}
+
+.log a {
+    color: #fff;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
+
+
+/* ====================
+    main
+====================*/
+#wrap main {
+    width: 1340px;
+    height: 100%;
+    margin: 121px auto 0;
+}
+
+/* profile */
+#wrap main .profile {
+    width: 100%;
+    display: flex;
+    gap: 85px;
+    align-items: center;
+    position: relative;
+    margin: 50px 0 43px;
+}
+#wrap main .profile .userInfo .myName {
+    font-size: 40px;
+    font-weight: 550;
+    color: var(--companyColor);
+}
+#wrap main .profile .userInfo .myName span {
+    font-size: 26px;
+    color: #808080;
+    margin-left: 20px;
+    font-weight: normal;
+}
+#wrap main .profile .userInfo .membership {
+    font-size: 35px;
+    display: flex;
+    gap: 20px;
+    margin-top: 9px;
+    position: relative;
+    cursor: pointer;
+}
+#wrap main .profile .options img {
+    position: absolute;
+    top: 32px;right: 0;
+}
+#wrap main .profile .userInfo .membership .membershipPopup {
+    display: none;
+}
+#wrap main .profile .userInfo .membership:hover .membershipPopup,
+#wrap main .profile .userInfo .membership:focus .membershipPopup {
+    position: absolute;
+    top: 24px;left: 24px;
+    z-index: 3;
+    display: block;
+}
+
+
+#wrap main .title {
+    font-size: 30px;
+    font-weight: 550;
+    margin-bottom: 10px;
+}
+#wrap main .myInfo {
+    width: 1340px;
+    height: 195px;
+    border-radius: 30px;
+    box-shadow: 0 0 8px var(--shadowColor);
+    display: flex;
+    align-items: center;
+}
+#wrap main .myInfo ul {
+    width: 670px;
+    height: 145px;
+}
+#wrap main .myInfo .Balance {
+    border-right: 2px solid #808080;
+    position: relative;
+    margin: 20px 70px;
+}
+#wrap main .myInfo .Balance li span {
+    font-size: 20px;
+}
+#wrap main .myInfo .Balance li:nth-child(2) {
+    position: absolute;
+    bottom: 0;right: 70px;
+    margin-top: 25px;
+}
+#wrap main .myInfo .Balance li button {
+    font-size: 25px;
+    line-height: 25px;
+    padding: 10px;
+    border-radius: 10px;
+}
+#wrap main .myInfo .Balance li .charge {
+    color: var(--companyColor);
+    border: 2px solid var(--companyColor);
+    background-color: #fff;
+}
+#wrap main .myInfo .Balance li .refund {
+    color: #fff;
+    border: 2px solid var(--companyColor);
+    background-color: var(--companyColor);
+}
+
+#wrap main .myInfo .myCar {
+    width: 670px;
+    height: 145px;
+}
+#wrap main .myInfo .myCar .carList {
+    font-size: 26px;
+    line-height: 26px;
+    text-align: center;
+}
+#wrap main .myInfo .myCar .carList table {
+    border-collapse: collapse;
+    width: 519px;
+    height: 104px;
+}
+#wrap main .myInfo .myCar .carList table tr:nth-child(1) td {
+    border-bottom: 2px solid #ddd;
+}
+
+
+#wrap main>.line {
+    width: 100%;
+    height: 2px;
+    background-color: #a6a6a6;
+    margin-top: 50px;
+}
+
+
+#wrap main .parkingRecord .title,
+#wrap main .myReview .title {
+    width: 231px; height: 100px;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    font-size: 30px;
+    line-height: 30px;
+    background-color: #fff;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    text-align: center;
+    box-shadow: 0 0 8px var(--shadowColor);
+    margin-top: 50px;
+}
+
+.recordList,
+.reviewList {
+    border-radius: 30px;
+    background-color: #fff;
+    box-shadow: 0 0 8px var(--shadowColor);
+    margin-top: -40px;
+    padding: 21px 42px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    scroll-behavior: auto;
+}
+.ticketInfo::-webkit-scrollbar,
+.favoritesInfo::-webkit-scrollbar,  
+.recordList::-webkit-scrollbar,
+.reviewList::-webkit-scrollbar {
+    display: none;
+}
+
+/* myTF */
+#wrap main .myTF {
+    width: 1340px;height: 254px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+#wrap main .myTF .TFbox {
+    position: relative;
+    display: flex;
+    margin-top: 50px;
+}
+
+#wrap main .myTF .TFbox h2 {
+    width: 170px;height: 60px;
+    background-color: #a6a6a6;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    padding: 20px 30px;
+}
+
+#wrap main .myTF .TFbox h2.on {background-color: #fff;}
+#wrap main .myTF .TFbox h2.on+ul {display: block;}
+
+#wrap main .myTF .TFbox>ul {
+    width: 1340px;height: 195px;
+    border-radius: 30px;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+    padding: 30px 32px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 70px;left: 0;
+    display: none;
+}
+
+#wrap main .myTF .TFbox ul li ul {
+    display: flex;
+    justify-content: space-between;
+}
+#wrap main .myTF .TFbox ul li ul li {
+    display: flex;
+    align-items: center;
+    gap:15px;
+    margin-bottom: 20px;
+}
+
+#wrap main .myTF .TFbox ul li img {
+    width: 55px;
+}
+
+#wrap main .myTF .TFbox ul li p {
+    font-size: 26px;
+}
+#wrap main .myTF .TFbox ul li span {
+    font-size: 20px;
+    color: #808080;
+}
+#wrap main .myTF .TFbox ul li .price {
+    font-size: 38px;
+    font-weight: bold;
+    color: #223e94;
+}
+#wrap main .myTF .TFbox ul li .marking img {
+    width: 26px;height: 26px;
+}
+
+
+
+/* parkingRecord */
+#wrap main .parkingRecord .recordList,
+#wrap main .myReview .reviewList {
+    width: 1340px;
+    height: 433px;
+}
+#wrap main .parkingRecord .recordList table {
+    width: 1222px;
+}
+#wrap main .parkingRecord .recordList tr {
+    font-size: 26px;
+    line-height: 26px;
+    text-align: center;
+    line-height: 85px;
+}
+#wrap main .parkingRecord .recordList tr td:nth-child(1) {
+    display: flex;
+    gap: 20px;
+    font-weight: 550;
+}
+
+/* myReview */
+#wrap main .myReview { 
+    margin-bottom: 50px;
+}
+#wrap main .myReview .reviewList ul {
+    display: flex;
+    gap: 40px;
+}
+#wrap main .myReview .reviewList ul .line {
+    width: 100%;
+    height: 2px;
+    background-color: #a6a6a6;
+    margin: 13px 0;
+}
+#wrap main .myReview .reviewList .photo {
+    width: 130px;
+    height: 130px;
+    border-radius: 30px;
+    background: url(../images/mypage_parkingPhoto.jpg) no-repeat center/cover;
+    margin: 21px 0;
+}
+#wrap main .myReview .reviewList .review {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#wrap main .myReview .reviewList .review .detail p {
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 550;
+    margin-bottom: 20px;
+}
+#wrap main .myReview .reviewList .review .detail span {
+    font-size: 26px;
+    line-height: 26px;
+    color: #808080;
+}
+#wrap main .myReview .reviewList .review .write {
+    height: 52px;
+    font-size: 30px;
+    line-height: 30px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: none;
+    background-color: #a6a6a6;
+    color: #fff;
+}
+
+
+
+
+
+/* ====================
+    footer
+====================*/
+footer {
+    width: 100%;
+    height: 192px;
+    z-index: 2;
+    box-shadow: 0 -5px 10px rgba(60, 119, 207, 0.1);
+}
+footer .footerInner {
+    position: relative;
+    width: 1341px;
+    height: 100%;
+    margin: 0 auto;
+}
+footer .footerInner .blogo {
+    position: absolute;
+    top: 44px;
+    width: 154px;
+    height: 30px;
+}
+footer .footerInner .blogo img {
+    height: 40px;
+}
+footer .footerInner p,
+footer .footerInner span,
+footer .footerInner span a {
+    position: relative;
+    color: #808080;
+    font-size: 19px;
+}
+footer .footerInner p {
+    position: relative;
+    top: 98px;
+}
+footer .footerInner p span {
+    top: 0;
+}
+footer .footerInner span {
+    position: relative;
+    top: 103px;
+    font-weight: 700;
+}
+footer .footerInner span a {
+    position: relative;
+}
+footer .footerInner .footer_menu {
+    position: absolute;
+    top: 47px;
+    right: 0;
+}
+footer .footerInner .footer_menu a {
+    margin-left: 56px;
+    font-size: 18px;
+    color: var(--companyColor);
+}
+footer .footerInner .footer_menu a:nth-of-type(3) {
+    font-weight: 700;
+}
+footer .footerInner .app {
+    position: absolute;
+    top: 107px;
+    right: 169px;
+}
+footer .footerInner select {
+    position: absolute;
+    width: 160px;
+    height: 37px;
+    border-radius: 5px;
+    top: 107px;
+    right: 0;
+    border: 1px solid #a6a6a6;
+    font-size: 18px;
+    color: #a6a6a6;
+}
+footer .footerInner select option {
+    margin-left: 50px;
+}
+
+
+

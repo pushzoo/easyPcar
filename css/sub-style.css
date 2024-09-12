@@ -1,0 +1,576 @@
+@charset "utf-8";
+
+/* font */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@font-face {
+    font-family: 'NEXEN TIRE';
+    src: url('../font/NEXEN_TIRE_Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* color */
+:root {
+    --companyColor : #3C77CF;
+}
+
+/* reset */
+* {margin: 0;padding: 0;}
+
+a {text-decoration: none;}
+li {list-style: none;}
+p, span, a, h1, h2, h3, h4, h5, h6, td, th, li {color:#000; font-family: 'pretendard';}
+
+
+#wrap header {
+    width: 100%;
+    position: fixed;
+    top: 0;left: 0;
+    z-index: 999999;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(60, 119, 207, 0.1);
+}
+
+/* ====================
+    header
+====================*/
+
+.headerInner {
+    width: 1920px; height: 96px;
+    display: flex;
+    margin: 0 auto;
+}
+
+.headerIcon_container {
+    width: 1342px; height: 96px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 25px;
+    box-sizing: border-box;
+}
+
+.left_icon button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.left_icon p {
+    float: right;
+    font-size: 25px;
+    line-height: 40px;
+    margin-left: 20px;
+    color: var(--companyColor);
+}
+
+/* side-side-bar */
+.side-bar {
+    width: 358px;
+    height: 1080px;
+    z-index: 99999999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-358px);
+}
+
+.side-bar.active {
+    transform: translateX(0); /*사이드바가 화면에 나타남*/
+}
+
+.side-bar-header {
+    height: 100px;
+}
+
+#side-closeToggle{
+    width: 40px; height: 40px;
+    position: absolute;
+    top: 15px;
+    right: 28px;
+    padding-top: 5px;
+}
+
+.mainMenu {
+    margin: 0 0 0 46px;
+}
+.mainMenu li>a {
+    width: 268px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0px;
+}
+.mainMenu li>a .title{
+    font-size: 28px;
+    letter-spacing: -2px;
+    display: flex;
+    gap: 10px;
+}
+
+.subMenu {
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+/* 서브메뉴가 열릴 때 */
+.accordion-item.active .subMenu {
+    display: block;
+}
+
+.subMenu li>a {
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    background-color: rgba(60, 119, 207, 0.2);
+    padding: 18px 0 18px 50px;
+    width: 268px;
+    box-sizing: border-box;
+}
+
+.subMenu li a:hover {
+    background-color: #2c6dcd;
+    color: #fff;
+}
+
+.subside-bar li>a img {
+    width: 24px;
+}
+
+.headerIcon_container .logo {
+    position: absolute;
+    top: 50%;
+    padding-top: 5px;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 요소 크기의 절반만큼 이동 */
+}
+
+.headerIcon_container .logo img {
+    height: 70px;
+}
+
+.right_icon {
+    display: flex;
+}
+
+.headerInfo {
+    display: flex;
+    gap: 15px;
+}
+
+.mypage {
+    display: flex;
+    gap: 8px;
+}
+
+.mypage img {
+    width: 41px;
+    height: 41px;
+    padding-top: 5px;
+}
+
+.money {
+    font-size: 24px;
+    line-height: 41px;
+    color: var(--companyColor);
+    display: flex;
+    gap: 5px;
+    padding-top: 5px;
+}
+
+.money span {
+    color: var(--companyColor);
+}
+
+.bell {
+    color: #223E94;
+    padding-top: 8px;
+    position: relative;
+}
+.bell .noticePopup {
+    display: none;
+}
+.bell:hover .noticePopup,
+.bell:focus .noticePopup {
+    position: absolute;
+    top: 42px;right: -44px;
+    display: block;
+}
+
+
+.log {
+    display: flex;
+    background-color: var(--companyColor);
+    border-radius: 10px;
+    width: 92px;
+    height: 36px;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 11px;
+}
+
+.log a {
+    color: #fff;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
+
+
+/* ====================
+    main
+====================*/
+#wrap main {
+    width: 1340px;
+    height: 100%;
+    margin: 121px auto 0;
+}
+
+
+#wrap main>.title {
+    width: 467px;
+    font-size: 60px;
+    line-height: 60px;
+    text-align: center;
+    padding: 30px 50px;
+    box-sizing: border-box;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    margin: 0 auto;
+    font-family: 'NEXEN TIRE', sans-serif;
+}
+
+#wrap main p.subtitle {
+    margin-top: 27px;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: left;
+    background-color: #fff;
+}
+#wrap main p.subtitle span {
+    color: var(--companyColor);
+    font-weight: bold;
+}
+
+#wrap main .paymentInner {
+    display: flex;
+    justify-content: space-between;
+    height: 550px;
+    align-items: center;
+}
+
+#wrap main .paymentInner img {
+    width: 96px;
+    height: 96px;
+}
+
+
+
+/* non-paymentList */
+#wrap main .paymentInner .non-paymentList {
+    width: 569px; height: 550px;
+    overflow-y: scroll;
+    border-bottom: 5px solid #555;
+    border-top: 5px solid #555;
+    box-sizing: border-box;
+}
+
+#wrap main .paymentInner .non-paymentList::-webkit-scrollbar {
+    display: none;
+}
+#wrap main .paymentInner .non-paymentList table.listInner {
+    width: 100%; height: 550px;
+    box-sizing: border-box;
+}
+#wrap main .paymentInner .non-paymentList .listInner tr {
+    width: 100%;height: 131px;
+}
+#wrap main .paymentInner .non-paymentList .listInner tr td {
+    text-align: center;
+    border-bottom: 5px dashed #ddd;
+}
+#wrap main .paymentInner .non-paymentList .listInner tr .name {
+    font-size: 35px;
+}
+#wrap main .paymentInner .non-paymentList .listInner tr .date {
+    font-size: 25px;
+    color: #555;
+}
+#wrap main .paymentInner .non-paymentList .listInner tr .price {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+
+/* selectBox */
+#wrap main .paymentInner .selectBox {
+    width: 569px;
+}
+#wrap main .paymentInner .selectBox .select {
+    height: 550px;
+    border-top: 5px solid var(--companyColor);
+    border-bottom: 5px solid var(--companyColor);
+    padding: 25px 0;
+    box-sizing: border-box;
+}
+#wrap main .paymentInner .selectBox .select .carNumber {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: right;
+    margin: 0 38px 25px;
+}
+#wrap main .paymentInner .selectBox .select .parkingInfo {
+    display: flex;
+    gap: 35px;
+    margin: 0 38px;
+}
+#wrap main .paymentInner .selectBox .select .parkingInfo .enterTime,
+#wrap main .paymentInner .selectBox .select .parkingInfo .leaveTime {
+    width: 80px;
+    font-size: 30px;
+    font-weight: 550;
+    text-align: center;
+    margin-top: 25px;
+}
+#wrap main .paymentInner .selectBox .select .parkingInfo .time {
+    width: 270px;
+    height: 180px;
+    font-size: 35px;
+    text-align: center;
+    padding: 44px 56px 92px;
+    box-sizing: border-box;
+    letter-spacing: -4px;
+    background: url("../images/sub_selectArrow.png") no-repeat center/cover;
+}
+#wrap main .paymentInner .selectBox .select .roundingTime {
+    font-size: 35px;
+    font-weight: 550;
+    text-align: center;
+    padding: 10px 0 30px;
+}
+#wrap main .paymentInner .selectBox .select .total {
+    font-size: 60px;
+    font-weight: bold;
+    text-align: right;
+    padding-top: 10px;
+    border-top: 5px dashed #ddd;
+}
+#wrap main  button {
+    font-size: 32px;
+    font-weight: 550;
+    background-color: #ddd;
+    border: none;
+    padding: 21px 38px;
+    border-radius: 30px;
+    margin-top: 15px;
+    float: right;
+}
+
+#wrap main .pay {
+    width: 1340px;
+    margin: 0 auto;
+    margin-top: 104px;
+    margin-bottom: 135px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#wrap main .pay p {
+    font-size: 70px;
+    line-height: 124px;
+    text-align: center;
+    color: #223e94;
+    border-bottom: 5px solid var(--companyColor);
+}
+#wrap main .pay p span {
+    font-size: 80px;
+    font-weight: bold;
+    color: #223e94;
+}
+#wrap main .pay button {
+    width: 423px;
+    height: 103px;
+    font-size: 48px;
+    line-height: 48px;
+    color: #fff;
+    background-color: var(--companyColor);
+    border: none;
+    border-radius: 30px;
+}
+
+
+#wrap main h3 {
+    font-size: 45px;
+    font-weight: 550;
+}
+#wrap main .non-paymentSteps .steps {
+    display: flex;
+    width: 1330px;  
+    justify-content: space-between;
+    margin-top: 50px;
+    align-items: center;
+}
+#wrap main .non-paymentSteps .steps li p {
+    width: 182px;
+    height: 100px;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: center;
+    padding-top: 25px;
+    box-sizing: border-box;
+}
+#wrap main .non-paymentSteps .steps .blueBox p {
+    color: #fff;
+    background-color: var(--companyColor);
+}
+#wrap main .non-paymentSteps .steps .whiteBox p {
+    background-color: #fff;
+    border: 1px solid #555;
+}
+#wrap main .non-paymentSteps .steps li:nth-child(7) p {
+    padding-top: 11px;
+}
+#wrap main .non-paymentSteps .steps li p span {
+    font-size: 15px;
+}
+#wrap main .non-paymentSteps .caution {
+    margin: 36px 0 100px 310px;
+    display: flex;
+    gap: 240px;
+}
+#wrap main .non-paymentSteps .caution li {
+    list-style: disc;
+    line-height: 24px;
+}
+
+#wrap main .non-paymentMethod .methodInner {
+    width: 1330px;
+    height: 196px;
+    background-color: #fff;
+    border: 1px solid #000;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    margin: 50px 0 50px;
+}
+#wrap main .non-paymentMethod .methodInner .method1 {
+    width: 665px;
+    height: 160px;
+    border-right: 2px dashed #ddd;
+}
+#wrap main .non-paymentMethod .methodInner .method2 {
+    padding-left: 20px;
+}
+#wrap main .non-paymentMethod .methodInner ul li {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 25px;
+}
+#wrap main .non-paymentMethod .methodInner ul li p span {
+    font-size: 18px;
+    color: #808080;
+    line-height: 34px;
+}
+#wrap main .non-paymentMethod .methodInner ul li ul li {
+    font-size: 16px;
+    list-style: disc;
+    margin: 10px 0 0 25px;
+    line-height: 17px;
+}
+
+
+
+
+
+/* ====================
+    footer
+====================*/
+footer {
+    width: 100%;
+    height: 192px;
+    z-index: 2;
+    box-shadow: 0 -5px 10px rgba(60, 119, 207, 0.1);
+}
+footer .footerInner {
+    position: relative;
+    width: 1341px;
+    height: 100%;
+    margin: 0 auto;
+}
+footer .footerInner .blogo {
+    position: absolute;
+    top: 44px;
+    width: 154px;
+    height: 30px;
+}
+footer .footerInner .blogo img {
+    height: 40px;
+}
+footer .footerInner p,
+footer .footerInner span,
+footer .footerInner span a {
+    position: relative;
+    color: #808080;
+    font-size: 19px;
+}
+footer .footerInner p {
+    position: relative;
+    top: 98px;
+}
+footer .footerInner p span {
+    top: 0;
+}
+footer .footerInner span {
+    position: relative;
+    top: 103px;
+    font-weight: 700;
+}
+footer .footerInner span a {
+    position: relative;
+}
+footer .footerInner .footer_menu {
+    position: absolute;
+    top: 47px;
+    right: 0;
+}
+footer .footerInner .footer_menu a {
+    margin-left: 56px;
+    font-size: 18px;
+    color: var(--companyColor);
+}
+footer .footerInner .footer_menu a:nth-of-type(3) {
+    font-weight: 700;
+}
+footer .footerInner .app {
+    position: absolute;
+    top: 107px;
+    right: 169px;
+}
+footer .footerInner select {
+    position: absolute;
+    width: 160px;
+    height: 37px;
+    border-radius: 5px;
+    top: 107px;
+    right: 0;
+    border: 1px solid #a6a6a6;
+    font-size: 18px;
+    color: #a6a6a6;
+}
+footer .footerInner select option {
+    margin-left: 50px;
+}
+
+
+
